@@ -7,6 +7,8 @@
 
 <body>
 <?php
+
+//Swith to postgreSQL?
 //ini_set('display_errors', 1);
 $servername = "localhost";
 $username = "William";
@@ -38,12 +40,6 @@ echo "<td>" . $row['firstname'] . "</td>";
 echo "</tr>";
 }
 echo "<table>";
-
-//echo '<table class="someClass">';
-//.someClass{
-//top: 15px;
-//left: 10px;
-//}
 
 
 $conn->close();

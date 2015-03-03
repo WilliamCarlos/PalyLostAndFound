@@ -1,14 +1,60 @@
 <!DOCTYPE HTML> 
 <html lang="en-US">
 
+<head>
+<!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">--> 
+</head>
+<!-- Input form -->
 <title>Lost and Found Website</title>
 <h1>MySQL Test</h1>
 <p> Fill out the information below: </p>
 
 <form action= "action_page.php" method="GET">
 
-<input type="text" name="firstname_input" value="First Name"> 
- <input type="submit" name="submit" value="Submit!" />
+
+<!-- first name, last name, article type, color, owner first name, owner last name, Additional details, password?, upload file, (date found)-->
+<input type="text" name="firstname_input" value="Your First Name"> 
+<input type="text" name="lastname_input" value="Your Last Name"> 
+
+<br><br>
+Type of Article: <select name="articleType">
+  <option value="shirt">Shirt</option>
+  <option value="pants">Pants</option>
+  <option value="jacket">Jacket</option>
+  <option value="backpack">Backpack</option>
+  <option value="binder">Binder</option>
+  <option value="cellphone">Cellphone</option>
+  <option value="watch">Watch</option>
+</select>
+
+<br><br>
+Color of Article: <select name="articleColor">
+  <option value="white">White</option>
+  <option value="black">Black</option>
+  <option value="yellow">Yellow</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+  <option value="purple">Purple</option>
+  <option value="grey">Grey</option>
+  <option value="brown">Brown</option>
+</select>
+<br> <br>
+
+<input type="text" name="ownerFirstName" value="Owner's First Name"> 
+<input type="text" name="ownerLastName" value="Owner's Last Name"> 
+
+<br> <br>
+
+Additional Details: <br> 
+<input type="text" name="additionalDetails" value="Add Additional Details" style="width: 200px; height: 75px" display:  > 
+
+<br> <br>
+Input Password: <input type="password" name="pwd" value="Input Password"> 
+
+<!--<p>Select a file:</p> <input type="file" name="img">-->
+
+<br><br>
+<input type="submit" name="submit" value="Submit!" />
 
 </form>
 

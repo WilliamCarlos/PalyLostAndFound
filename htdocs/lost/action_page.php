@@ -9,7 +9,16 @@ $servername = "localhost";
 $username = "William";
 $password = "password";
 $dbname = "namesTest";
-$first_name = $_GET['firstname_input'];
+// first name, last name, article type, color, owner first name, owner last name, Additional details, password?, upload file, (date found)
+$firstname_input = $_GET['firstname_input'];
+$lastname_input = $_GET['lastname_input'];
+$articleType = $_GET['articleType'];
+$articleColor = $_GET['articleColor'];
+$ownerFirstName = $_GET['ownerFirstName'];
+$ownerLastName = $_GET['ownerLastName'];
+$additionalDetails = $_GET['additionalDetails'];
+$pwd = $_GET['pwd'];
+//uploaded file variable
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,9 +27,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-
+//TRUNCATE TABLE names; will reset the names. 
 $sql = "INSERT INTO Names (firstname)
-VALUES ('$first_name');";
+VALUES ('$firstname_input');";
+
+//IF PASSWORD EQUALS _____
+//MySQL databases columns -> var name
+$sql = "INSERT INTO Names (firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails)   
+        VALUES ('$firstname_input', '$lastname_input', '$articleType', '$articleColor', '$ownerFirstName', '$ownerLastName', '$additionalDetails');";
+    
+        //VALUES ('$firstname_input');";
+        //VALUES('".$firstname."','".$lastname."','".$email."')";
 
 
 if ($conn->multi_query($sql) === TRUE) {
@@ -35,16 +52,4 @@ if ($conn->multi_query($sql) === TRUE) {
 
 </HTML>
 
-<!--
-<p>Hi 
-echo htmlspecialchars($_GET['firstname']); 
-echo " ";
-echo htmlspecialchars($_GET['lastname']);?>
-<br>
 
-echo htmlspecialchars($_GET['color']);?> </p>
-<br>
- echo "your password is: ";
-echo htmlspecialchars($_GET['password']); ?>
-<br>
--->

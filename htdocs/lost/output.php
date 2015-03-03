@@ -29,14 +29,30 @@ $result = $conn->query($sql);
 echo "<table id = 'displayTable'>
 <tr>
 <th>id</th>
-<th>Firstname</th>
+<th>Volunteer's First Name</th>
+<th>Volunteer's Last Name</th>
+<th>Owner's First Name</th>
+<th>Owner's Last Name</th>
+<th>Article Type</th>
+<th>Article Color</th>
+<th>Additional Details</th>
+
+
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
+
+	//articleType | articleColor | ownerFirstName | ownerLastName | additionalDetails 
 echo "<tr>";
 echo "<td>" . $row['id'] . "</td>";
 echo "<td>" . $row['firstname'] . "</td>";
+echo "<td>" . $row['lastname'] . "</td>";
+echo "<td>" . $row['ownerFirstName'] . "</td>";
+echo "<td>" . $row['ownerLastName'] . "</td>";
+echo "<td>" . $row['articleType'] . "</td>";
+echo "<td>" . $row['articleColor'] . "</td>";
+echo "<td>" . $row['additionalDetails'] . "</td>";
 echo "</tr>";
 }
 echo "<table>";

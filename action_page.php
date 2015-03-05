@@ -20,7 +20,6 @@ $additionalDetails = $_GET['additionalDetails'];
 $pwd = $_GET['pwd'];
 //uploaded file variable
 
-//test comment
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection

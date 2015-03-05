@@ -4,9 +4,9 @@
 <header> 
 <link rel="stylesheet" type="text/css" href="tableStyle.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
-<nav id="main-menu" class="pure-menu pure-menu-open pure-menu-horizontal">
+<nav id="main-menu" class="pure-menu pure-menu-open pure-menu-horizontal" text-align:"center">
+   <a href="#" class="pure-menu-heading pure-menu-link">Palo Alto High School Lost and Found</a>
   <div class="pure-menu pure-menu-horizontal">
-    <a href="#" class="pure-menu-heading pure-menu-link">Palo Alto High School Lost and Found</a>
     <ul class="pure-menu-list">
         <li class="pure-menu-item pure-menu-selected"><a href="/lost/output.php" class="pure-menu-link">Current Items</a></li>
         <li class="pure-menu-item pure-menu-selected"><a href="/lost/database_test.html" class="pure-menu-link">Add an Item</a></li>
@@ -14,9 +14,10 @@
          <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Log In</a></li>
     </ul>
 </div>
+</nav>
 </nav> </header>
-<title> Output page </title>
-<h1> First Names </h1>
+<title> Paly Lost and Found: Current Items </title>
+<h1> Current Items at the Lost and Found </h1>
 
 <body>
 <?php

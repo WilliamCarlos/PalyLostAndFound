@@ -1,0 +1,52 @@
+
+body {
+	/*background-image: url("/lost/background.jpg");*/
+    background-color: white;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table#displayTable tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table#displayTable tr:nth-child(odd) {
+   background-color:#fff;
+}
+
+table#displayTable th {
+    background-color: black;
+    color: white;
+}
+
+.custom-restricted {
+    height: 160px;
+    width: 150px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.pure-menu {
+text-align:center;
+background-color: white;
+}
+
+.form {
+	padding-top: 30px;
+padding-left: 200px;
+/*add background to form to differentiate from background*/
+
+}

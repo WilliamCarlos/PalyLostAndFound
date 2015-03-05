@@ -1,5 +1,6 @@
 
 body {
+	/*background-image: url("/lost/background.jpg");*/
     background-color: white;
 }
 
@@ -31,4 +32,21 @@ table#displayTable th {
     color: white;
 }
 
+.custom-restricted {
+    height: 160px;
+    width: 150px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
 
+.pure-menu {
+text-align:center;
+background-color: white;
+}
+
+.form {
+	padding-top: 30px;
+padding-left: 200px;
+/*add background to form to differentiate from background*/
+
+}

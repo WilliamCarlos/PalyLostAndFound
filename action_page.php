@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<? ob_start(); ?>
 <HTML>
 <title> Output page </title>
 </HTML>
@@ -33,15 +33,14 @@ $sql = "INSERT INTO items (firstname, lastname, articleType, articleColor, owner
         //VALUES ('$firstname_input');";
         //VALUES('".$firstname."','".$lastname."','".$email."')";
 if ($conn->multi_query($sql) === TRUE) {
-	//ADD HEADER REDIRECT?
-	//header("Location: http://mydomain.com/myOtherPage.php");
+header("Location: http://localhost:8888/lost/itemAdded.html");
 	 /* Redirect browser */
+	
 	//http://localhost:8888/lost/itemAdded.html
     //echo "New record created successfully";
 } else {
     //echo "Error: " . $sql . "<br>" . $conn->error;
 }
 //$conn->close();
-header("Location: http://localhost:8888/lost/itemAdded.html");
-exit();
 ?>
+<? ob_flush(); ?>

@@ -1,4 +1,5 @@
 
+
 body {
 	background-image: url("/lost/background.jpg");
     background-color: white;
@@ -10,13 +11,14 @@ h1 {
 }
 
 th, td {
-    padding: 5px;
+    padding: 1px;
     text-align: left;
 }
 
 table, th, td {
     border: 1px solid black;
-    border-collapse: collapse;
+    margin-left: 50px;
+    /*border-collapse: collapse;*/
 }
 
 table#displayTable tr:nth-child(even) {
@@ -46,7 +48,6 @@ background-color: white;
 
 .form {
 	padding-top: 30px;
-padding-left: 200px;
+	padding-left: 200px;
 /*add background to form to differentiate from background*/
 
-}

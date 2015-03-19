@@ -20,7 +20,7 @@
 
 <body>
 <form method="GET" action="output.php">
-<input type="search" placeholder="Search For an Owner " id="search" name="search">
+<input type="search" placeholder="Search For an Item " id="search" name="search">
 </form>
 <?php
 //Swith to postgreSQL?
@@ -78,7 +78,8 @@ echo "</tr>";
 
 } else {
 	echo "keyword is not empty";
-	$sql = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%'";
+	//IN(firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails);
+	$sql = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%' OR ownerLastName LIKE '%$keyword%' OR firstname LIKE '%$keyword%' OR lastname LIKE '%$keyword%' OR articleType LIKE '%$keyword%'  OR articleColor LIKE '%$keyword%'  OR additionalDetails LIKE '%$keyword%'";
 	/* add filters to prevent SQL injection*/
 	echo "query step 1";
 	$result = $conn->query($sql);

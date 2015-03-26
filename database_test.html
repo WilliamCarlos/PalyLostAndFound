@@ -4,13 +4,13 @@
 <head>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
 	<nav id="main-menu" class="pure-menu pure-menu-open pure-menu-horizontal" text-align:"center">
-		<a href="#" class="pure-menu-heading pure-menu-link">Palo Alto High School Lost and Found</a>
-		<div class="pure-menu pure-menu-horizontal">
-			<ul class="pure-menu-list">
-				<li class="pure-menu-item pure-menu-selected"><a href="/lost/output.php" class="pure-menu-link">Current Items</a></li>
-				<li class="pure-menu-item pure-menu-selected"><a href="/lost/database_test.html" class="pure-menu-link">Add an Item</a></li>
-				<li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Contact Us</a></li>
-				<li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Log In</a></li>
+		<div class="pure-menu pure-menu-horizontal header">
+			<ul class="pure-menu-list header">
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link headerHome"> Palo Alto High School Lost and Found</a>
+				<li class="pure-menu-item"><a href="/lost/output.php" class="pure-menu-link header">Current Items</a></li>
+				<li class="pure-menu-item"><a href="/lost/database_test.html" class="pure-menu-link header">Add an Item</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link header">Contact Us</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link header">Log In</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -62,28 +62,6 @@
 		<option value="brown">Brown</option>
 	</octgroup>
 </select>
-
-
-<!--<div class="pure-menu pure-menu-scrollable custom-restricted" name="acticleColor">
-    <a href="#" class="pure-menu-link pure-menu-heading">Yahoo</a>
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Flickr</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Autos</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Beauty</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Movies</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Small Business</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Cricket</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tech</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">World</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Support</a></li>
-    </ul>
-</div>
--->
 <br> <br>
 
 <!-- placeholder="text" can be used for chrome and firefox but is not supported by IE versions 9 and earlier, so stick to this for now-->
@@ -111,14 +89,52 @@ Input Password: <input type="password" name="pwd" style="width: 350px">
 
 <style type="text/css">
 	/* Some of this css code was taken from online css outlines, which make the form look nice/presentable */
+	/* CSS SOURCE: http://www.sanwebe.com/2014/08/css-html-forms-designs */
 	body {
-		background-color: white;
+		padding:20px;
+		max-width:1000px;
+		margin:auto auto;
+		font-family:sans;
+		background-color: #234600;
+		/*#234600*/
+
+	}
+
+	.header {
+		color: white;
+		padding-bottom: 5px;
+		padding-top: 5px;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: right;
+	}
+
+	.headerHome {
+		color: white;
+		padding: 5px;
 	}
 	.pure-menu {
 		text-align:center;
-		background-color: #234600;
+		/* green color #234600; */
 		/*robotics color #333333 */
-		color: white;
+		/*color: white; */
+		background: rgba(56, 56, 56, 1);
+		/* rgba(30, 50, 24, 1); */ 
+		/*color: white;*/
+		/*rgba(35, 70, 0, 1); */
+	}
+
+	.pure-menu li a {
+		/*color: white; */	
+	}
+
+	.pure-menu li a:hover {
+		/*background-color: green; */
+		background: rgba(0,130,0,.85); 
+		/*color: white;*/
+		
+		/*filter: alpha(opacity=80);
+   		opacity: 0.8; */
 	}
 
 	.nav a {
@@ -180,7 +196,7 @@ Input Password: <input type="password" name="pwd" style="width: 350px">
 		-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 		box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 		margin-bottom: 30px;
-		
+
 	}
 	.form input[type="text"]:focus,
 	.form input[type="date"]:focus,
@@ -198,6 +214,8 @@ Input Password: <input type="password" name="pwd" style="width: 350px">
 		-webkit-appearance: menulist-button;
 		height:35px;
 	}
+
+	/*number at side of form*/
 	.form .number {
 		background: #1abc9c;
 		color: #fff;

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <HTML>
 <header> 
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
@@ -35,17 +34,13 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
-//Assign contents of items into the $sql variable
-	?>
-
-
-	<?php 
+	//assign contents in the search textfield to a keyword variable
 	$keyword = $_GET['search'];
 	/*$_GET['search']*/
 	?>
 	<table>
 		<tr>
-			<th>id</th>
+			<!--<th>id</th>-->
 			<th>Volunteer's First Name</th>
 			<th>Volunteer's Last Name</th>
 			<th>Owner's First Name</th>
@@ -64,7 +59,7 @@
 			while($row = mysqli_fetch_array($result))
 			{
 				echo "<tr>";
-				echo "<td>" . $row['id'] . "</td>";
+				//echo "<td>" . $row['id'] . "</td>";
 				echo "<td>" . $row['firstname'] . "</td>";
 				echo "<td>" . $row['lastname'] . "</td>";
 				echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -75,7 +70,6 @@
 				echo "<td>" . $row['dateCreated'] . "</td>";
 				echo "</tr>";
 			}
-
 		} else {
 			echo "keyword is not empty";
 //IN(firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails);
@@ -88,7 +82,7 @@
 			{
 				echo "loop";
 				echo "<tr>";
-				echo "<td>" . $row['id'] . "</td>";
+				//echo "<td>" . $row['id'] . "</td>";
 				echo "<td>" . $row['firstname'] . "</td>";
 				echo "<td>" . $row['lastname'] . "</td>";
 				echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -110,9 +104,10 @@
 		text-align:center;
 		background-color: white;
 	}
+
 	body {
 		padding:20px;
-		max-width:800px;
+		max-width:1000px;
 		margin:auto auto;
 		font-family:sans;
 	}
@@ -124,6 +119,7 @@
 		color:#fff;
 	} td {
 		padding:5px;
+		/* border: 1px solid black; */
 	}
 
 	input {

@@ -2,18 +2,27 @@
 <html lang="en-US">
 
 <head>
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
-	<link rel="stylehseet" href="lost/lib/css/foundation.css"
-	<nav id="main-menu" class="pure-menu pure-menu-open pure-menu-horizontal" text-align:"center">
-		<div class="pure-menu pure-menu-horizontal header">
-			<ul class="pure-menu-list header">
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link headerHome"> Palo Alto High School Lost and Found</a>
-				<li class="pure-menu-item"><a href="/lost/output.php" class="pure-menu-link header">Current Items</a></li>
-				<li class="pure-menu-item"><a href="/lost/database_test.html" class="pure-menu-link header">Add an Item</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link header">Contact Us</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link header">Log In</a></li>
+	<link rel="stylesheet" href="css/foundation.css">
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#">Palo Alto High School Lost and Found</a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<ul class="right">
+				<li class="divider"></li>
+				<li><a href="/lost/output.php">Current Items</a></li>
+				<li class="divider"></li>
+				<li><a href="/lost/database_test.html">Add an Item</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Contact Us</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Log In</a></li>
 			</ul>
-		</div>
+		</section>
 	</nav>
 </head>
 
@@ -24,64 +33,64 @@
 
 <!-- pure-form-aligned?? --> 
 <div class="form">
-<h1>Add a New Entry: </h1>
-<br>
-<form action= "action_page.php" method="GET">
-	<fieldset>
-		<legend><span class="number">1</span> Volunteer Information</legend>
-		<!-- first name, last name, article type, color, owner first name, owner last name, Additional details, password?, upload file, (date found)-->
-		<input type="text" name="firstname_input" value="Your First Name" onclick="this.value=''"> 
-		<input type="text" name="lastname_input" value="Your Last Name" onclick="this.value=''"> 
-	</fieldset>
-	<fieldset>
-		<legend><span class="number">2</span> Lost Item</legend>
+	<h1>Add a New Entry: </h1>
+	<br>
+	<form action= "action_page.php" method="GET">
+		<fieldset>
+			<legend><span class="number">1</span> Volunteer Information</legend>
+			<!-- first name, last name, article type, color, owner first name, owner last name, Additional details, password?, upload file, (date found)-->
+			<input type="text" name="firstname_input" value="Your First Name" onclick="this.value=''"> 
+			<input type="text" name="lastname_input" value="Your Last Name" onclick="this.value=''"> 
+		</fieldset>
+		<fieldset>
+			<legend><span class="number">2</span> Lost Item</legend>
 
-		Type of Article: <select name="articleType">
+			Type of Article: <select name="articleType">
+			<option selected="selected" value="other">Other</option>
+			<optgroup label="Please select an option below if possible: ">
+				<option value="shirt">Shirt</option>
+				<option value="pants">Pants</option>
+				<option value="jacket">Jacket</option>
+				<option value="backpack">Backpack</option>
+				<option value="binder">Binder</option>
+				<option value="cellphone">Cellphone</option>
+				<option value="watch">Watch</option>
+			</optgroup>
+		</select>
+		<br><br>
+		Color of Article:  <select name="articleColor">
 		<option selected="selected" value="other">Other</option>
-		<optgroup label="Please select an option below if possible: ">
-			<option value="shirt">Shirt</option>
-			<option value="pants">Pants</option>
-			<option value="jacket">Jacket</option>
-			<option value="backpack">Backpack</option>
-			<option value="binder">Binder</option>
-			<option value="cellphone">Cellphone</option>
-			<option value="watch">Watch</option>
-		</optgroup>
+		<octgroup label="Please select an option below if possible: ">
+			<option value="white">White</option>
+			<option value="black">Black</option>
+			<option value="yellow">Yellow</option>
+			<option value="green">Green</option>
+			<option value="blue">Blue</option>
+			<option value="purple">Purple</option>
+			<option value="grey">Grey</option>
+			<option value="brown">Brown</option>
+		</octgroup>
 	</select>
+	<br> <br>
+
+	<!-- placeholder="text" can be used for chrome and firefox but is not supported by IE versions 9 and earlier, so stick to this for now-->
+	<input type="text" name="ownerFirstName" value="Owner's First Name" onclick="this.value=''"
+	onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
+
+	<input type="text" name="ownerLastName" value="Owner's Last Name" onclick="this.value=''" 
+	onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
+
+	<br> <br>
+
+	Additional Details: <br> 
+	<input type="text" name="additionalDetails"  style="width: 200px; height: 75px"> 
+	<!--need to put <p> aligned at top of textbox -->
+	<br> <br>
+	Input Password: <input type="password" name="pwd" style="width: 350px"> 
+
+	<!--<p>Select a file:</p> <input type="file" name="img">-->
+
 	<br><br>
-	Color of Article:  <select name="articleColor">
-	<option selected="selected" value="other">Other</option>
-	<octgroup label="Please select an option below if possible: ">
-		<option value="white">White</option>
-		<option value="black">Black</option>
-		<option value="yellow">Yellow</option>
-		<option value="green">Green</option>
-		<option value="blue">Blue</option>
-		<option value="purple">Purple</option>
-		<option value="grey">Grey</option>
-		<option value="brown">Brown</option>
-	</octgroup>
-</select>
-<br> <br>
-
-<!-- placeholder="text" can be used for chrome and firefox but is not supported by IE versions 9 and earlier, so stick to this for now-->
-<input type="text" name="ownerFirstName" value="Owner's First Name" onclick="this.value=''"
-onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
-
-<input type="text" name="ownerLastName" value="Owner's Last Name" onclick="this.value=''" 
-onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
-
-<br> <br>
-
-Additional Details: <br> 
-<input type="text" name="additionalDetails"  style="width: 200px; height: 75px"> 
-<!--need to put <p> aligned at top of textbox -->
-<br> <br>
-Input Password: <input type="password" name="pwd" style="width: 350px"> 
-
-<!--<p>Select a file:</p> <input type="file" name="img">-->
-
-<br><br>
 </fieldset>
 <input type="submit" name="submit" value="Submit!" />
 </form>
@@ -130,7 +139,7 @@ Input Password: <input type="password" name="pwd" style="width: 350px">
 		/*color: white;*/
 		
 		/*filter: alpha(opacity=80);
-   		opacity: 0.8; */
+		opacity: 0.8; */
 	}
 	.nav a {
 		color: blue;
@@ -250,34 +259,34 @@ Input Password: <input type="password" name="pwd" style="width: 350px">
 	}
 </style>
 <table>
-  <thead>
-    <tr>
-      <th width="200">table Header</th>
-      <th>Table Header</th>
-      <th width="150">Table Header</th>
-      <th width="150">Table Header</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Content Goes Here</td>
-      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-      <td>Content Goes Here</td>
-      <td>Content Goes Here</td>
-    </tr>
-    <tr>
-      <td>Content Goes Here</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-      <td>Content Goes Here</td>
-      <td>Content Goes Here</td>
-    </tr>
-    <tr>
-      <td>Content Goes Here</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-      <td>Content Goes Here</td>
-      <td>Content Goes Here</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th width="200">table Header</th>
+			<th>Table Header</th>
+			<th width="150">Table Header</th>
+			<th width="150">Table Header</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Content Goes Here</td>
+			<td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+			<td>Content Goes Here</td>
+			<td>Content Goes Here</td>
+		</tr>
+		<tr>
+			<td>Content Goes Here</td>
+			<td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+			<td>Content Goes Here</td>
+			<td>Content Goes Here</td>
+		</tr>
+		<tr>
+			<td>Content Goes Here</td>
+			<td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+			<td>Content Goes Here</td>
+			<td>Content Goes Here</td>
+		</tr>
+	</tbody>
 </table>
 </html>
 

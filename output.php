@@ -2,6 +2,7 @@
 <HTML>
 <header> 
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
+	<linm rel="stylesheet" href="/lib/css/foundation.css"
 	<nav id="main-menu" class="pure-menu pure-menu-open pure-menu-horizontal" text-align:"center">
 	<a href="#" class="pure-menu-heading pure-menu-link">Palo Alto High School Lost and Found</a>
 		<div class="pure-menu pure-menu-horizontal">

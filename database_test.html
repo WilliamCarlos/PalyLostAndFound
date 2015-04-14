@@ -3,7 +3,7 @@
 
 <head>
 	<link rel="stylesheet" href="css/foundation.css">
-	<nav class="top-bar">
+	<nav class="top-bar" style="top:15px">
 		<ul class="title-area">
 			<li class="name">
 				<h1><a href="#">Palo Alto High School Lost and Found</a></h1>
@@ -21,30 +21,22 @@
 				<li><a href="#">Contact Us</a></li>
 				<li class="divider"></li>
 				<li><a href="#">Log In</a></li>
-			</ul>
-		</section>
+		</section></ul>
 	</nav>
 </head>
-
-<!-- Input form -->
 <title>Paly Lost and Found: Add an Item</title>
-
 <br> <br>
-
-<!-- pure-form-aligned?? --> 
 <div class="form">
-	<h1>Add a New Entry: </h1>
-	<br>
+	<h2>Add a New Entry: </h2>
+	
 	<form action= "action_page.php" method="GET">
 		<fieldset>
 			<legend><span class="number">1</span> Volunteer Information</legend>
-			<!-- first name, last name, article type, color, owner first name, owner last name, Additional details, password?, upload file, (date found)-->
 			<input type="text" name="firstname_input" value="Your First Name" onclick="this.value=''"> 
 			<input type="text" name="lastname_input" value="Your Last Name" onclick="this.value=''"> 
 		</fieldset>
 		<fieldset>
 			<legend><span class="number">2</span> Lost Item</legend>
-
 			Type of Article: <select name="articleType">
 			<option selected="selected" value="other">Other</option>
 			<optgroup label="Please select an option below if possible: ">
@@ -72,8 +64,6 @@
 		</octgroup>
 	</select>
 	<br> <br>
-
-	<!-- placeholder="text" can be used for chrome and firefox but is not supported by IE versions 9 and earlier, so stick to this for now-->
 	<input type="text" name="ownerFirstName" value="Owner's First Name" onclick="this.value=''"
 	onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
 
@@ -83,11 +73,10 @@
 	<br> <br>
 
 	Additional Details: <br> 
-	<input type="text" name="additionalDetails"  style="width: 200px; height: 75px"> 
+	<input type="text" name="additionalDetails"  style="height: 75px"> 
 	<!--need to put <p> aligned at top of textbox -->
 	<br> <br>
 	Input Password: <input type="password" name="pwd" style="width: 350px"> 
-
 	<!--<p>Select a file:</p> <input type="file" name="img">-->
 
 	<br><br>
@@ -100,22 +89,14 @@
 	/* Some of this css code was taken from online css outlines, which make the form look nice/presentable */
 	/* CSS SOURCE: http://www.sanwebe.com/2014/08/css-html-forms-designs */
 	body {
-		padding:20px;
+		
 		max-width:1000px;
 		margin:auto auto;
-		font-family:sans;
 		background-color: white;
 		/*#234600*/
 	}
 
-	.header {
-		color: white;
-		padding-bottom: 5px;
-		padding-top: 5px;
-		padding-left: 15px;
-		padding-right: 15px;
-		text-align: right;
-	}
+
 	.headerHome {
 		color: white;
 		padding: 5px;
@@ -145,8 +126,10 @@
 		color: blue;
 	}
 
-	h1 {
-		font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+	h2 {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: 37px;
 		margin-left: 10px;
 	}
 
@@ -168,6 +151,7 @@
 	.form legend {
 		font-size: 1.4em;
 		margin-bottom: 10px;
+		background-color: #f4f7f8;;
 	}
 	.form label {
 		display: block;
@@ -258,36 +242,6 @@
 		background: #109177;
 	}
 </style>
-<table>
-	<thead>
-		<tr>
-			<th width="200">table Header</th>
-			<th>Table Header</th>
-			<th width="150">Table Header</th>
-			<th width="150">Table Header</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Content Goes Here</td>
-			<td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-			<td>Content Goes Here</td>
-			<td>Content Goes Here</td>
-		</tr>
-		<tr>
-			<td>Content Goes Here</td>
-			<td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-			<td>Content Goes Here</td>
-			<td>Content Goes Here</td>
-		</tr>
-		<tr>
-			<td>Content Goes Here</td>
-			<td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-			<td>Content Goes Here</td>
-			<td>Content Goes Here</td>
-		</tr>
-	</tbody>
-</table>
 </html>
 
 

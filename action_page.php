@@ -1,6 +1,6 @@
 <? ob_start(); ?>
 <HTML>
-<title> Output page </title>
+    <title> Output page </title>
 </HTML>
 <?php
 
@@ -28,14 +28,14 @@ if ($conn->connect_error) {
 //MySQL databases columns -> var name
 //ADD IMAGE URL LINK.. hm.. 
 $sql = "INSERT INTO items (firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails)   
-        VALUES ('$firstname_input', '$lastname_input', '$articleType', '$articleColor', '$ownerFirstName', '$ownerLastName', '$additionalDetails');";
+VALUES ('$firstname_input', '$lastname_input', '$articleType', '$articleColor', '$ownerFirstName', '$ownerLastName', '$additionalDetails');";
     	//include all information in additionalDetails col of sql databsase to make a regex search easier. 
         //VALUES ('$firstname_input');";
         //VALUES('".$firstname."','".$lastname."','".$email."')";
 if ($conn->multi_query($sql) === TRUE) {
-header("Location: http://localhost:8888/lost/itemAdded.html");
-	 /* Redirect browser */
-	
+    header("Location: http://localhost:8888/lost/itemAdded.html");
+    /* Redirect browser */
+    
 	//http://localhost:8888/lost/itemAdded.html
     //echo "New record created successfully";
 } else {

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML> 
 <html lang="en-US">
 
-<head>
+<header>
 	<link rel="stylesheet" href="css/foundation.css">
 	<nav class="top-bar" style="top:15px">
 		<ul class="title-area">
@@ -21,67 +21,67 @@
 				<li><a href="#">Contact Us</a></li>
 				<li class="divider"></li>
 				<li><a href="#">Log In</a></li>
-		</section></ul>
-	</nav>
-</head>
-<title>Paly Lost and Found: Add an Item</title>
-<br> <br>
-<div class="form">
-	<h2>Add a New Entry: </h2>
-	
-	<form action= "action_page.php" method="GET">
-		<fieldset>
-			<legend><span class="number">1</span> Volunteer Information</legend>
-			<input type="text" name="firstname_input" value="Your First Name" onclick="this.value=''"> 
-			<input type="text" name="lastname_input" value="Your Last Name" onclick="this.value=''"> 
-		</fieldset>
-		<fieldset>
-			<legend><span class="number">2</span> Lost Item</legend>
-			Type of Article: <select name="articleType">
+			</section></ul>
+		</nav>
+	</header>
+	<title>Paly Lost and Found: Add an Item</title>
+	<br> <br>
+	<div class="form">
+		<h2>Add a New Entry: </h2>
+		
+		<form action= "action_page.php" method="GET">
+			<fieldset>
+				<legend><span class="number">1</span> Volunteer Information</legend>
+				<input type="text" name="firstname_input" value="Your First Name" onclick="this.value=''"> 
+				<input type="text" name="lastname_input" value="Your Last Name" onclick="this.value=''"> 
+			</fieldset>
+			<fieldset>
+				<legend><span class="number">2</span> Lost Item</legend>
+				Type of Article: <select name="articleType">
+				<option selected="selected" value="other">Other</option>
+				<optgroup label="Please select an option below if possible: ">
+					<option value="shirt">Shirt</option>
+					<option value="pants">Pants</option>
+					<option value="jacket">Jacket</option>
+					<option value="backpack">Backpack</option>
+					<option value="binder">Binder</option>
+					<option value="cellphone">Cellphone</option>
+					<option value="watch">Watch</option>
+				</optgroup>
+			</select>
+			<br><br>
+			Color of Article:  <select name="articleColor">
 			<option selected="selected" value="other">Other</option>
-			<optgroup label="Please select an option below if possible: ">
-				<option value="shirt">Shirt</option>
-				<option value="pants">Pants</option>
-				<option value="jacket">Jacket</option>
-				<option value="backpack">Backpack</option>
-				<option value="binder">Binder</option>
-				<option value="cellphone">Cellphone</option>
-				<option value="watch">Watch</option>
-			</optgroup>
+			<octgroup label="Please select an option below if possible: ">
+				<option value="white">White</option>
+				<option value="black">Black</option>
+				<option value="yellow">Yellow</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+				<option value="purple">Purple</option>
+				<option value="grey">Grey</option>
+				<option value="brown">Brown</option>
+			</octgroup>
 		</select>
+		<br> <br>
+		<input type="text" name="ownerFirstName" value="Owner's First Name" onclick="this.value=''"
+		onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
+
+		<input type="text" name="ownerLastName" value="Owner's Last Name" onclick="this.value=''" 
+		onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
+
+		<br> <br>
+
+		Additional Details: <br> 
+		<input type="text" name="additionalDetails"  style="height: 75px"> 
+		<!--need to put <p> aligned at top of textbox -->
+		<br> <br>
+		Input Password: <input type="password" name="pwd" style="width: 350px"> 
+		<!--<p>Select a file:</p> <input type="file" name="img">-->
+
 		<br><br>
-		Color of Article:  <select name="articleColor">
-		<option selected="selected" value="other">Other</option>
-		<octgroup label="Please select an option below if possible: ">
-			<option value="white">White</option>
-			<option value="black">Black</option>
-			<option value="yellow">Yellow</option>
-			<option value="green">Green</option>
-			<option value="blue">Blue</option>
-			<option value="purple">Purple</option>
-			<option value="grey">Grey</option>
-			<option value="brown">Brown</option>
-		</octgroup>
-	</select>
-	<br> <br>
-	<input type="text" name="ownerFirstName" value="Owner's First Name" onclick="this.value=''"
-	onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
-
-	<input type="text" name="ownerLastName" value="Owner's Last Name" onclick="this.value=''" 
-	onfocus="this.select()" onblur="this.value=!this.value?' Unknown ':this.value;" />
-
-	<br> <br>
-
-	Additional Details: <br> 
-	<input type="text" name="additionalDetails"  style="height: 75px"> 
-	<!--need to put <p> aligned at top of textbox -->
-	<br> <br>
-	Input Password: <input type="password" name="pwd" style="width: 350px"> 
-	<!--<p>Select a file:</p> <input type="file" name="img">-->
-
-	<br><br>
-</fieldset>
-<input type="submit" name="submit" value="Submit!"/>
+	</fieldset>
+	<input type="submit" name="submit" value="Submit!"/>
 
 </form>
 </div>
@@ -90,39 +90,12 @@
 	/* Some of this css code was taken from online css outlines, which make the form look nice/presentable */
 	/* CSS SOURCE: http://www.sanwebe.com/2014/08/css-html-forms-designs */
 	body {
-		
 		max-width: 1000px;
 		margin:auto auto;
 		background-color: white;
 		/*#234600*/
 	}
 
-
-	.headerHome {
-		color: white;
-		padding: 5px;
-	}
-	.pure-menu {
-		text-align:center;
-		/* green color #234600; */
-		/*robotics color #333333 */
-		/*color: white; */
-		background: rgba(56, 56, 56, 1);
-		/* rgba(30, 50, 24, 1); */ 
-		/*color: white;*/
-		/*rgba(35, 70, 0, 1); */
-	}
-	.pure-menu li a {
-		/*color: white; */	
-	}
-	.pure-menu li a:hover {
-		/*background-color: green; */
-		background: rgba(0,130,0,.85); 
-		/*color: white;*/
-		
-		/*filter: alpha(opacity=80);
-		opacity: 0.8; */
-	}
 	.nav a {
 		color: blue;
 	}

@@ -1,23 +1,32 @@
-<!DOCTYPE html>
-<HTML>
-<header> 
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
-	<linm rel="stylesheet" href="/lib/css/foundation.css"
-	<nav id="main-menu" class="pure-menu pure-menu-open pure-menu-horizontal" text-align:"center">
-	<a href="#" class="pure-menu-heading pure-menu-link">Palo Alto High School Lost and Found</a>
-		<div class="pure-menu pure-menu-horizontal">
-		<ul class="pure-menu-list">
-			<li class="pure-menu-item pure-menu-selected"><a href="/lost/output.php" class="pure-menu-link">Current Items</a></li>
-			<li class="pure-menu-item pure-menu-selected"><a href="/lost/database_test.html" class="pure-menu-link">Add an Item</a></li>
-			<li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Contact Us</a></li>
-			<li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Log In</a></li>
-	</ul>
-	</div>
-	</nav>
-</nav> </header>
+<!DOCTYPE HTML> 
+<html lang="en-US">
+<header>
+	<link rel="stylesheet" href="css/foundation.css">
+	<nav class="top-bar" style="top:15px">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#">Palo Alto High School Lost and Found</a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<ul class="right">
+				<li class="divider"></li>
+				<li><a href="/lost/output.php">Current Items</a></li>
+				<li class="divider"></li>
+				<li><a href="/lost/database_test.html">Add an Item</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Contact Us</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Log In</a></li>
+			</section></ul>
+		</nav>
+	</header>
+</br> </br>
+
 <title> Paly Lost and Found: Current Items </title>
 <h1> Current Items at the Lost and Found </h1>
-
 <body>
 	<form method="GET" action="output.php">
 		<input type="search" placeholder="Search For an Item " id="search" name="search">
@@ -54,7 +63,7 @@
 		<?php
 		if ($keyword == "")
 		{
-			echo "keyword is empty";
+			//echo "keyword is empty";
 			$sql = "SELECT * FROM items ORDER BY dateCreated DESC";
 			$result = $conn->query($sql);
 			while($row = mysqli_fetch_array($result))
@@ -72,7 +81,7 @@
 				echo "</tr>";
 			}
 		} else {
-			echo "keyword is not empty";
+			//echo "keyword is not empty";
 //IN(firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails);
 			$sql = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%' OR ownerLastName LIKE '%$keyword%' OR firstname LIKE '%$keyword%' OR lastname LIKE '%$keyword%' OR articleType LIKE '%$keyword%'  OR articleColor LIKE '%$keyword%'  OR additionalDetails LIKE '%$keyword%'";
 			/* add filters to prevent SQL injection*/
@@ -94,46 +103,49 @@
 				echo "<td>" . $row['dateCreated'] . "</td>";
 				echo "</tr>";
 			}
-			echo "passed loop";
+			//echo "passed loop";
 			echo "<table>";
 		}
 		$conn->close();
 		?>
 
-<style type="text/css">
-	.pure-menu {
-		text-align:center;
-		background-color: white;
-	}
+		<style type="text/css">
+			table#displayTable tr:nth-child(even) {
+				background-color: #eee;
+			}
 
-	body {
-		padding:20px;
-		max-width:1000px;
-		margin:auto auto;
-		font-family:sans;
-	}
+			table#displayTable tr:nth-child(odd) {
+				background-color:#fff;
+			}
 
-	table {
-		width:100%
-	} th {
-		background:#666;
-		color:#fff;
-	} td {
-		padding:5px;
-		/* border: 1px solid black; */
-	}
+			body {
+				max-width: 1000px;
+				margin:auto auto;
+				background-color: white;
+				/*#234600*/
+			}
 
-	input {
-		width:100%;
-		height: 24px;
-		font-size: 18px;
-		padding:2px;
-		border:0;
-	}
+			table {
+				width:100%
+			} th {
 
-	h1 {
-		font-weight: normal;
-	}
-	</style>
+			} td {
+				padding:5px;
+				/* border: 1px solid black; */
+			}
+			input {
+				width:100%;
+				height: 24px;
+				font-size: 18px;
+				padding:2px;
+				border:0;
+			}
+
+			h1 {
+				font-weight: normal;
+				font-size: 30px;
+				text-align: center;
+			}
+		</style>
 	</body>
 </HTML>

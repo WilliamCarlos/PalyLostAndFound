@@ -1,7 +1,7 @@
 <!DOCTYPE HTML> 
 <html lang="en-US">
 <header>
-	<link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" type="text/css" href="css/foundation.css">
 	<nav class="top-bar" style="top:15px">
 		<ul class="title-area">
 			<li class="name">
@@ -45,7 +45,8 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	//assign contents in the search textfield to a keyword variable
-	$keyword = $_GET['search'];
+	if(isset($_GET['search'])){$keyword = $_GET['search'];}
+
 	/*$_GET['search']*/
 	?>
 	<table>
@@ -61,8 +62,8 @@
 			<th>Date found</th>
 		</tr>
 		<?php
-		if ($keyword == "")
-		{
+
+		if(!isset($_GET['search'])) {
 			//echo "keyword is empty";
 			$sql = "SELECT * FROM items ORDER BY dateCreated DESC";
 			$result = $conn->query($sql);
@@ -85,12 +86,12 @@
 //IN(firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails);
 			$sql = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%' OR ownerLastName LIKE '%$keyword%' OR firstname LIKE '%$keyword%' OR lastname LIKE '%$keyword%' OR articleType LIKE '%$keyword%'  OR articleColor LIKE '%$keyword%'  OR additionalDetails LIKE '%$keyword%'";
 			/* add filters to prevent SQL injection*/
-			echo "query step 1";
+			//echo "query step 1";
 			$result = $conn->query($sql);
-			echo "query step 2";
+			//echo "query step 2";
 			while($row = mysqli_fetch_array($result)) 
 			{
-				echo "loop";
+				//echo "loop";
 				echo "<tr>";
 				//echo "<td>" . $row['id'] . "</td>";
 				echo "<td>" . $row['firstname'] . "</td>";
@@ -110,21 +111,16 @@
 		?>
 
 		<style type="text/css">
-			table#displayTable tr:nth-child(even) {
-				background-color: #eee;
+			h1 {
+				font-weight: normal;
+				font-size: 30px;
+				text-align: center;
 			}
-
-			table#displayTable tr:nth-child(odd) {
-				background-color:#fff;
-			}
-
 			body {
 				max-width: 1000px;
 				margin:auto auto;
 				background-color: white;
-				/*#234600*/
 			}
-
 			table {
 				width:100%
 			} th {
@@ -133,19 +129,38 @@
 				padding:5px;
 				/* border: 1px solid black; */
 			}
-			input {
+		/*	input {
 				width:100%;
 				height: 24px;
 				font-size: 18px;
 				padding:2px;
 				border:0;
+			}*/
+			table#displayTable tr:nth-child(even) {
+				background-color: #eee;
 			}
 
-			h1 {
-				font-weight: normal;
-				font-size: 30px;
-				text-align: center;
+			table#displayTable tr:nth-child(odd) {
+				background-color:#fff;
 			}
+
 		</style>
 	</body>
 </HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

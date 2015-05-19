@@ -147,7 +147,7 @@
 				$conn->close();
 				?>
 
-
+ <img width="270" height="228" src="showfile.php?image_id=11" alt="fresh.gif">
 			</body>
 		</HTML>
 

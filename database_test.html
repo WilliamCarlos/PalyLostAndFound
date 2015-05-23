@@ -28,7 +28,7 @@
 	<div class="form">
 		<h2>Add a New Entry: </h2>
 
-		<form action= "action_page.php" method="GET">
+		<form action= "action_page.php" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend><span class="number">1</span> Volunteer Information</legend>
 				<input type="text" name="firstname_input" value="Your First Name" onclick="this.value=''"> 
@@ -72,17 +72,16 @@
 		<br> <br>
 
 		Additional Details: <br> 
-		<input type="text" name="additionalDetails"  style="height: 75px"> 
+		<input type="text" name="additionalDetails" value="No additional details" onclick="this.value=''" 
+		onfocus="this.select()" onblur="this.value=!this.value?' No additional details ':this.value;" style="height: 75px"/>
 		<!--need to put <p> aligned at top of textbox -->
 		<br> <br>
 		Input Password: <input type="password" name="pwd" style="width: 350px"> 
 		<!--<p>Select a file:</p> <input type="file" name="img">-->
-
 		<br><br>
 
-		<!-- image upload --> 
-		<input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
-		<div><input name="userfile" type="file" /></div>
+		<input type="file" name="image">
+		<br/>
 	</fieldset>
 	<input type="submit" name="submit" value="Submit!"/>
 
@@ -98,7 +97,6 @@
 		background-color: white;
 		/*#234600*/
 	}
-
 	.nav a {
 		color: blue;
 	}
@@ -110,13 +108,11 @@
 	.top-bar-section li:not(.has-form) a:not(.button):hover {
 		background: #777;
 	}
-
 	.form{
 		max-width: 550px;
 		padding: 10px 20px;
 		background: #f4f7f8;
 		margin: 10px auto;
-
 		padding: 20px;
 		background: #f4f7f8;
 		border-radius: 8px;
@@ -162,7 +158,6 @@
 		-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 		box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 		margin-bottom: 30px;
-
 	}
 	.form input[type="text"]:focus,
 	.form input[type="date"]:focus,
@@ -180,7 +175,6 @@
 		-webkit-appearance: menulist-button;
 		height: 35px;
 	}
-
 	/*number at side of form*/
 	.form .number {
 		background: #1abc9c;
@@ -195,7 +189,6 @@
 		text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 		border-radius: 15px 15px 15px 0px;
 	}
-
 	.form input[type="submit"],
 	.form input[type="button"]
 	{
@@ -221,8 +214,3 @@
 	}
 </style>
 </html>
-
-
-
-
-

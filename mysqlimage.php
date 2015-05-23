@@ -8,11 +8,13 @@ ini_set('default_socket_timeout',300);
         <br/>
         <input type="file" name="image" />
         <br/><br/>
-        <input type="submit" name="sumit" value="Upload" />
+        <input type="submit" name="imageSubmit" value="Upload" />
     </form>
     <?php
-    if(isset($_POST['sumit']))
+    /* if input from imageSubmit is not null: */
+    if(isset($_POST['imageSubmit']))
     {
+        /* if getimagesize fails, print error message. Otherwise, run the else block */
         if(getimagesize($_FILES['image']['tmp_name']) == FALSE)
         {
             echo "Please select an image.";
@@ -40,16 +42,8 @@ ini_set('default_socket_timeout',300);
             die("Connection failed: " . $conn->connect_error);
         } 
 
-        $qry="insert into images (name,image) values ('$name','$image')";
+        $qry="INSERT into images (name,image) VALUES ('$name','$image')";
         $result = $conn->query($qry);
-        if($result)
-        {
-                    //echo "<br/>Image uploaded.";
-        }
-        else
-        {
-                    //echo "<br/>Image not uploaded.";
-        }
     }
     function displayimage()
     {
@@ -63,7 +57,7 @@ ini_set('default_socket_timeout',300);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } 
-        $qry="SELECT * from images";
+        $qry="SELECT * FROM images";
         $result = $conn->query($qry);
 
         // $qry="select * from images";

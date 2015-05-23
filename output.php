@@ -69,7 +69,6 @@
 				<input type="search" placeholder="Search For an Item " id="search" name="search">
 			</form>
 			<?php
-//Swith to postgreSQL?
 //ini_set('display_errors', 1);
 			$servername = "localhost";
 			$username = "William";
@@ -103,11 +102,17 @@
 				if(!isset($_GET['search'])) {
 			//echo "keyword is empty";
 					$sql = "SELECT * FROM items ORDER BY dateCreated DESC";
+					$qry="SELECT * FROM images";
 					$result = $conn->query($sql);
+					$imageResult = $conn->query($qry);
 					while($row = mysqli_fetch_array($result))
 					{
 						echo "<tr>";
 				//echo "<td>" . $row['id'] . "</td>";
+						/*$qry="SELECT * FROM images";
+						$result = $conn->query($sql);
+						$imageResult = $conn->query($qry);
+						echo '<img height="300" width="300" src="data:image;base64,'.$row[2].' "> '; */
 						echo "<td>" . $row['firstname'] . "</td>";
 						echo "<td>" . $row['lastname'] . "</td>";
 						echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -118,16 +123,27 @@
 						echo "<td>" . $row['dateCreated'] . "</td>";
 						echo "</tr>";
 					}
+					while($row = mysqli_fetch_array($imageResult))
+					{
+						echo '<img height="300" width="300" src="data:image;base64,'.$row[2].' "> ';
+					}
+
 				} else {
 			//echo "keyword is not empty";
 //IN(firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails);
 					$sql = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%' OR ownerLastName LIKE '%$keyword%' OR firstname LIKE '%$keyword%' OR lastname LIKE '%$keyword%' OR articleType LIKE '%$keyword%'  OR articleColor LIKE '%$keyword%'  OR additionalDetails LIKE '%$keyword%'";
 					/* add filters to prevent SQL injection*/
+
+        // $qry="select * from images";
+        // $result=mysql_query($qry,$conn);
+
 			//echo "query step 1";
 					$result = $conn->query($sql);
 			//echo "query step 2";
 					while($row = mysqli_fetch_array($result)) 
 					{
+						//implement images into search
+						//echo '<img height="300" width="300" src="data:image;base64,'.$row[2].' "> ';
 				//echo "loop";
 						echo "<tr>";
 				//echo "<td>" . $row['id'] . "</td>";
@@ -140,18 +156,17 @@
 						echo "<td>" . $row['additionalDetails'] . "</td>";
 						echo "<td>" . $row['dateCreated'] . "</td>";
 						echo "</tr>";
+
+
 					}
 			//echo "passed loop";
 					echo "<table>";
+
 				}
 				$conn->close();
 				?>
-
- <img width="270" height="228" src="showfile.php?image_id=11" alt="fresh.gif">
 			</body>
 		</HTML>
-
-
 
 
 

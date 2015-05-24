@@ -96,16 +96,17 @@
 					<th>Article Color</th>
 					<th>Additional Details</th>
 					<th>Date found</th>
+					<th>Image</th>
 				</tr>
 				<?php
 
 				if(!isset($_GET['search'])) {
 			//echo "keyword is empty";
-					$sql = "SELECT * FROM items ORDER BY dateCreated DESC";
-					$qry="SELECT * FROM images";
-					$result = $conn->query($sql);
-					$imageResult = $conn->query($qry);
-					while($row = mysqli_fetch_array($result))
+					$dataQry = "SELECT * FROM items ORDER BY dateCreated DESC";
+					$dataResult = $conn->query($dataQry);
+					$imgQry="SELECT * FROM images";
+					$imageResult = $conn->query($imgQry);
+					while($row = mysqli_fetch_array($dataResult))
 					{
 						echo "<tr>";
 				//echo "<td>" . $row['id'] . "</td>";
@@ -121,7 +122,10 @@
 						echo "<td>" . $row['articleColor'] . "</td>";
 						echo "<td>" . $row['additionalDetails'] . "</td>";
 						echo "<td>" . $row['dateCreated'] . "</td>";
+						$rowImg = mysqli_fetch_array($imageResult);
+						echo "<td>" . '<img height="300" width="300" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
 						echo "</tr>";
+
 					}
 					while($row = mysqli_fetch_array($imageResult))
 					{
@@ -131,16 +135,16 @@
 				} else {
 			//echo "keyword is not empty";
 //IN(firstname, lastname, articleType, articleColor, ownerFirstName, ownerLastName, additionalDetails);
-					$sql = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%' OR ownerLastName LIKE '%$keyword%' OR firstname LIKE '%$keyword%' OR lastname LIKE '%$keyword%' OR articleType LIKE '%$keyword%'  OR articleColor LIKE '%$keyword%'  OR additionalDetails LIKE '%$keyword%'";
+					$dataQry = "SELECT * FROM items WHERE ownerFirstName LIKE '%$keyword%' OR ownerLastName LIKE '%$keyword%' OR firstname LIKE '%$keyword%' OR lastname LIKE '%$keyword%' OR articleType LIKE '%$keyword%'  OR articleColor LIKE '%$keyword%'  OR additionalDetails LIKE '%$keyword%'";
 					/* add filters to prevent SQL injection*/
 
         // $qry="select * from images";
         // $result=mysql_query($qry,$conn);
 
 			//echo "query step 1";
-					$result = $conn->query($sql);
+					$dataResult = $conn->query($dataQry);
 			//echo "query step 2";
-					while($row = mysqli_fetch_array($result)) 
+					while($row = mysqli_fetch_array($dataResult)) 
 					{
 						//implement images into search
 						//echo '<img height="300" width="300" src="data:image;base64,'.$row[2].' "> ';

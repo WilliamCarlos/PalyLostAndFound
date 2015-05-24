@@ -31,6 +31,7 @@ if(isset($_POST['submit']))
         saveimage($name,$image);
     }
 }
+displayimage();
 function saveimage($name,$image)
 {
     $servername = "localhost";

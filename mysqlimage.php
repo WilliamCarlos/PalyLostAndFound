@@ -8,11 +8,11 @@ ini_set('default_socket_timeout',300);
         <br/>
         <input type="file" name="image" />
         <br/><br/>
-        <input type="submit" name="imageSubmit" value="Upload" />
+        <input type="submit" name="submit" value="Upload" />
     </form>
     <?php
-    /* if input from imageSubmit is not null: */
-    if(isset($_POST['imageSubmit']))
+    /* if input from submit is not null: */
+    if(isset($_POST['submit']))
     {
         /* if getimagesize fails, print error message. Otherwise, run the else block */
         if(getimagesize($_FILES['image']['tmp_name']) == FALSE)

@@ -104,7 +104,7 @@
 			//echo "keyword is empty";
 					$dataQry = "SELECT * FROM items ORDER BY dateCreated DESC";
 					$dataResult = $conn->query($dataQry);
-					$imgQry="SELECT * FROM images";
+					$imgQry="SELECT * FROM images ORDER BY dateCreated DESC";
 					$imageResult = $conn->query($imgQry);
 					while($row = mysqli_fetch_array($dataResult))
 					{

@@ -144,6 +144,8 @@
 			//echo "query step 1";
 					$dataResult = $conn->query($dataQry);
 			//echo "query step 2";
+					$imgQry="SELECT * FROM images ORDER BY dateCreated DESC";
+					$imageResult = $conn->query($imgQry);
 					while($row = mysqli_fetch_array($dataResult)) 
 					{
 						//implement images into search
@@ -159,6 +161,8 @@
 						echo "<td>" . $row['articleColor'] . "</td>";
 						echo "<td>" . $row['additionalDetails'] . "</td>";
 						echo "<td>" . $row['dateCreated'] . "</td>";
+						$rowImg = mysqli_fetch_array($imageResult);
+						echo "<td>" . '<img height="300" width="300" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
 						echo "</tr>";
 
 

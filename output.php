@@ -2,6 +2,8 @@
 <html lang="en-US">
 <header>
 	<link rel="stylesheet" type="text/css" href="css/foundation.css">
+	<!--zoom.js plugin taken from https://github.com/fat/zoom.js-->
+	<link href="css/zoom.css" rel="stylesheet">
 	<nav class="top-bar" data-topbar role="navigation"style="top:15px">
 		<ul class="title-area">
 			<li class="name">
@@ -65,6 +67,10 @@
 		<title> Paly Lost and Found: Current Items </title>
 		<h1> Current Items at the Lost and Found </h1>
 		<body>
+			<!--zoom.js plugin-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+			<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+			<script src="js/zoom.js"></script>
 			<form method="GET" action="output.php">
 				<input type="search" placeholder="Search For an Item " id="search" name="search">
 			</form>
@@ -118,7 +124,7 @@
 						//if(!isset(mysqli_fetch_array($rowImg[3]))){}
 						//display "No Image" if image table is null?
 						//image upload size
-						echo "<td>" . '<img height="100" width="100" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
+						echo "<td>" . '<img height="100" width="100"  src="data:image;base64,'.$rowImg[2].' "data-action="zoom"> ' . "</td>";
 						echo "<td>" . $row['firstname'] . "</td>";
 						echo "<td>" . $row['lastname'] . "</td>";
 						echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -157,7 +163,7 @@
 						echo "<tr>";
 				//echo "<td>" . $row['id'] . "</td>";
 						$rowImg = mysqli_fetch_array($imageResult);
-						echo "<td>" . '<img height="100" width="100" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
+						echo "<td>" . '<img height="100" width="100" src="data:image;base64,'.$rowImg[2].' "data-action="zoom"> ' . "</td>";
 						echo "<td>" . $row['firstname'] . "</td>";
 						echo "<td>" . $row['lastname'] . "</td>";
 						echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -167,8 +173,6 @@
 						echo "<td>" . $row['additionalDetails'] . "</td>";
 						echo "<td>" . $row['dateCreated'] . "</td>";
 						echo "</tr>";
-
-
 					}
 			//echo "passed loop";
 					echo "<table>";

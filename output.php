@@ -88,6 +88,7 @@
 			<table>
 				<tr>
 					<!--<th>id</th>-->
+					<th>Image</th>
 					<th>Volunteer's First Name</th>
 					<th>Volunteer's Last Name</th>
 					<th>Owner's First Name</th>
@@ -96,7 +97,6 @@
 					<th>Article Color</th>
 					<th>Additional Details</th>
 					<th>Date found</th>
-					<th>Image</th>
 				</tr>
 				<?php
 
@@ -114,6 +114,11 @@
 						$result = $conn->query($sql);
 						$imageResult = $conn->query($qry);
 						echo '<img height="300" width="300" src="data:image;base64,'.$row[2].' "> '; */
+						$rowImg = mysqli_fetch_array($imageResult);
+						//if(!isset(mysqli_fetch_array($rowImg[3]))){}
+						//display "No Image" if image table is null?
+						//image upload size
+						echo "<td>" . '<img height="100" width="100" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
 						echo "<td>" . $row['firstname'] . "</td>";
 						echo "<td>" . $row['lastname'] . "</td>";
 						echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -122,8 +127,6 @@
 						echo "<td>" . $row['articleColor'] . "</td>";
 						echo "<td>" . $row['additionalDetails'] . "</td>";
 						echo "<td>" . $row['dateCreated'] . "</td>";
-						$rowImg = mysqli_fetch_array($imageResult);
-						echo "<td>" . '<img height="300" width="300" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
 						echo "</tr>";
 
 					}
@@ -153,6 +156,8 @@
 				//echo "loop";
 						echo "<tr>";
 				//echo "<td>" . $row['id'] . "</td>";
+						$rowImg = mysqli_fetch_array($imageResult);
+						echo "<td>" . '<img height="100" width="100" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
 						echo "<td>" . $row['firstname'] . "</td>";
 						echo "<td>" . $row['lastname'] . "</td>";
 						echo "<td>" . $row['ownerFirstName'] . "</td>";
@@ -161,8 +166,6 @@
 						echo "<td>" . $row['articleColor'] . "</td>";
 						echo "<td>" . $row['additionalDetails'] . "</td>";
 						echo "<td>" . $row['dateCreated'] . "</td>";
-						$rowImg = mysqli_fetch_array($imageResult);
-						echo "<td>" . '<img height="300" width="300" src="data:image;base64,'.$rowImg[2].' "> ' . "</td>";
 						echo "</tr>";
 
 

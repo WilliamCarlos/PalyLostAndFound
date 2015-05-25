@@ -25,7 +25,7 @@
 			</section></ul>
 		</nav>
 	</header>
-</br> </br>
+<br>
 <style type="text/css">
 	h1 {
 		font-weight: normal;
@@ -65,8 +65,9 @@
 			}
 		</style>
 		<title> Paly Lost and Found: Current Items </title>
-		<h1> Current Items at the Lost and Found </h1>
+		<!--<h1> Current Items at the Lost and Found </h1>-->
 		<body>
+		<img src="/lost/img/currentItems.png"> 
 			<!--zoom.js plugin-->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 			<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

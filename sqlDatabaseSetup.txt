@@ -1,0 +1,25 @@
+//first create a database named item
+CREATE DATABASE `item` 
+
+//create a table named "items" in the database "item"
+CREATE TABLE `items` (
+ `firstname` varchar(15) NOT NULL,
+ `lastname` varchar(20) NOT NULL,
+ `articleType` varchar(20) NOT NULL,
+ `articleColor` varchar(10) NOT NULL,
+ `ownerFirstName` varchar(15) DEFAULT NULL,
+ `ownerLastName` varchar(20) DEFAULT NULL,
+ `additionalDetails` varchar(500) DEFAULT NULL,
+ `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+ `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=latin1
+
+//create a table named "images" in the database named "item"
+CREATE TABLE `images` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `image` longblob NOT NULL,
+ `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1

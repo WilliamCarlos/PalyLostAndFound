@@ -1,0 +1,7 @@
+<?php
+include "utils.php";
+echoHeadings();
+?>
+<title>Email Verification Failed</title>
+<center><h3>A url in your email has been expired.</h3><h4>You can receive another email by clicking 'forgot my password' in the login page</h4></center>
+</html>

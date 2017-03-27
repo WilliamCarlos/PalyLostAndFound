@@ -1,0 +1,62 @@
+
+
+body {
+	/*background-image: url("/lost/background.jpg");*/
+    background-color: white;
+}
+
+h1 {
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+th, td {
+    padding: 1px;
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid black;
+    margin-left: 50px;
+    /*border-collapse: collapse;*/
+}
+
+table#displayTable tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table#displayTable tr:nth-child(odd) {
+   background-color:#fff;
+}
+
+table#displayTable th {
+    background-color: black;
+    color: white;
+}
+
+.custom-restricted {
+    height: 160px;
+    width: 150px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.pure-menu {
+text-align:center;
+background-color: white;
+}
+
+.form {
+	padding-top: 30px;
+	padding-left: 200px;
+}
+/*add background to form to differentiate from background*/
+
+
+
+
+
+
+
+
+
+

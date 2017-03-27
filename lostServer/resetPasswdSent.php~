@@ -1,0 +1,8 @@
+<?php
+session_start();
+include "utils.php";
+echoHeadings();
+?>
+<title>Reset Passwod Successful</title>
+<h3><center>An email to reset the password has been sent.<br></h3><h4>Please check your email and update your password</h4></center>
+</html>

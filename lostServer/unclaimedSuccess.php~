@@ -1,0 +1,8 @@
+<?php
+session_start();
+include "utils.php";
+echoHeadings();
+?>
+<title>Undo claim Successful</title>
+<h3><center>Your item has been added back to <a href="index.php">current items</a></center></h3>
+</html>

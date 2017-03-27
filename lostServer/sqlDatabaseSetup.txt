@@ -1,0 +1,48 @@
+//first create a database named item
+CREATE DATABASE `item` 
+
+//create a table named "items" in the database "item"
+CREATE TABLE `items` (
+ `firstname` varchar(30) NOT NULL,
+ `imageId` varchar(30) NOT NULL,
+ `articleType` varchar(20) NOT NULL,
+ `articleColor` varchar(10) NOT NULL,
+ `ownerFirstName` varchar(15) DEFAULT NULL,
+ `ownerLastName` varchar(20) DEFAULT NULL,
+ `additionalDetails` varchar(500) DEFAULT NULL,
+ `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+ `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ `claimed` boolean DEFAULT 0,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=latin1
+
+// create a user name, password table
+CREATE TABLE `founditems` (
+ `name` varchar(50) NOT NULL,
+ `imgName` varchar(20) NOT NULL,
+ `articleType` varchar(20) NOT NULL,
+ `articleColor` varchar(10) NOT NULL,
+ `additionalDetails` varchar(500) DEFAULT NULL,
+ `submitter` varchar(50) NOT NULL,
+ `dateCreated` timestamp NULL,
+ `dateClaimed` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ PRIMARY KEY (`imgName`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+// create a user name, password table
+CREATE TABLE `loginInfo` (
+ `name` varchar(50) NOT NULL,
+ `passwd` varchar(120) NOT NULL,
+ `firstname` varchar(50) NOT NULL,
+ `lastname` varchar(50) NOT NULL,
+ `emailverified` boolean NOT NULL DEFAULT 0,
+ `adminAccess` boolean DEFAULT 0,
+ `reserved` varchar(32) DEFAULT NULL,
+ PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `userRegistration` (
+ `name` varchar(50) NOT NULL,
+ `rnd` varchar(120) NOT NULL,
+ PRIMARY KEY (`rnd`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
